@@ -1,0 +1,13 @@
+<section>
+  <form class="auth-form column" action="/login" method="POST">
+    <h2 class="text-center">Log In</h2>
+
+    {{#each errors}}
+      <p class="error-message text-center">{{this}}</p>
+    {{/each}}
+
+    <input name="email" type="email" placeholder="Enter your email address">
+    <input name="password" type="password" placeholder="Enter your password">
+    <button>Submit</button>
+  </form>
+</section>

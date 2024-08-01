@@ -1,0 +1,23 @@
+<h1 class="page-header">Your Favorites:</h1>
+
+<!-- Use handlebars logic to show this only if the user doesn't have any stored favorites -->
+{{#if user.favorites}}
+  <section class="favorites">
+    {{#each user.favorites}}
+    <div class="favorite" data-id="{{id}}">
+      <h3>{{title}}</h3>
+      <p>Release: {{release_date}}</p>
+      <p>Director: {{director}}</p>
+      <div class="stars">
+        {{outputStars rating}}
+      </div>
+      <button>Remove</button>
+    </div>
+    {{/each}}
+  
+  </section>
+{{else}}
+  <p class="page-header">You have not stored any favorites.</p>
+{{/if}}
+
+<script src="/js/favorites.js"></script>

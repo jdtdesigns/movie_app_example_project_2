@@ -1,0 +1,163 @@
+/* RESETS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+a {
+  color: #333;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+/* GLOBAL CLASSES */
+.row, .column {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.fa-star {
+  color: orange;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.page-header {
+  margin: 35px 0 15px 5%;
+}
+
+/* CUSTOM STYLES */
+main {
+  flex: 1;
+}
+
+header {
+  padding: 10px 5%;
+}
+
+header a:not(nav a) {
+  text-decoration: none;
+}
+
+header nav p {
+  margin-right: 15px;
+}
+
+header nav a {
+  text-decoration: none;
+}
+
+header nav a:hover, header nav a.active {
+  text-decoration: underline;
+}
+
+header nav a:not(:last-child) {
+  margin-right: 8px;
+}
+
+.hero {
+  margin-top: 45px;
+}
+
+.hero h1 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.hero a {
+  text-decoration: none;
+  padding: 10px 35px;
+  background: #19c1a8;
+  color: #fff;
+  margin-top: 15px;
+}
+
+form.auth-form {
+  width: 400px;
+  margin: 35px auto;
+}
+
+form.auth-form > * {
+  padding: 6px 10px;
+  margin-bottom: 6px;
+}
+
+form.auth-form button {
+  background: #19ba90;
+  color: #fff;
+  padding: 10px 0 !important;
+}
+
+form.auth-form .error-message {
+  color: red;
+}
+
+section.favorites, section.results {
+  padding: 10px 5%;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr)
+}
+
+.favorite > *, .result > * {
+  margin-bottom: 6px;
+}
+
+.favorite button, .result button {
+  padding: 7px 10px;
+  background: #b15671;
+  color: #fff;
+  min-width: 150px;
+}
+
+.favorite button:disabled,
+.result button:disabled {
+  background: #9c888d;
+  color: #ccc;
+}
+
+.search-header {
+  margin: 25px 20px;
+}
+
+.search-header h2 {
+  margin-right: 15px;
+}
+
+.search-header form input {
+  margin-right: 5px;
+  padding: 0 10px;
+}
+
+.search-header form button {
+  padding: 7px 20px;
+  background: #bbb;
+}
+
+footer {
+  padding: 30px 5%;
+}

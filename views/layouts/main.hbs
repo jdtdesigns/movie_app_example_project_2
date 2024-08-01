@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="column">
+  <header class="row justify-between align-center">
+    <a href="/">
+      <h3>My Movies</h3>
+    </a>
+
+    <nav class="row align-center">
+      {{#if user}}
+        <p>Welcome, {{user.username}}</p>
+
+        <a href="/favorites" class="{{#if favorites}}active{{/if}}">Favorites</a>
+
+        <a href="/search" class="{{#if search}}active{{/if}}">Movie Search</a>
+        
+        <a href="/logout">Log Out</a>
+      {{else}}
+        {{#if landing}}
+          <a href="/login">Login or Register</a>
+        {{/if}}
+
+        {{#if login}}
+          <a href="/register">Register</a>
+        {{/if}}
+
+        {{#if register}}
+        <a href="/login">Log In</a>
+        {{/if}}
+      {{/if}}
+    </nav>
+  </header>
+
+  <main>
+    {{{body}}}
+  </main>
+
+  <footer class="row justify-between">
+    <p>&copy; Copyright Rutgers 2024</p>
+    <p>Development - Rutgers Instructional Team</p>
+  </footer>
+</body>
+</html>
