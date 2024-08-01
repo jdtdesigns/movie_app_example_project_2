@@ -23,7 +23,7 @@ app.use(express.json());
 app.engine('hbs', engine({
   extname: '.hbs',
   helpers: {
-    outputStars(rating,) {
+    outputStars(rating) {
       let starHtml = '';
 
       for (let i = 1; i <= 5; i++) {
