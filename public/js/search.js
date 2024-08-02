@@ -31,6 +31,9 @@ async function getMovies(e) {
 async function addFavorite(button) {
   const imdbID = button.dataset.imdbid;
 
+  button.innerText = 'Favorited';
+  button.disabled = true;
+
   await fetch('/api/favorite', {
     method: 'POST',
     headers: {
@@ -40,10 +43,6 @@ async function addFavorite(button) {
       imdbID: imdbID
     })
   });
-
-  button.innerText = 'Favorited';
-  button.disabled = true;
-
 
 }
 

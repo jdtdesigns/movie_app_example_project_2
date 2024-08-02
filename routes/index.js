@@ -10,6 +10,6 @@ router.use('/', [
   user_routes
 ]);
 
-router.use('/api', api_routes);
+router.use('/api', favorite_api_routes);
 
 module.exports = router;

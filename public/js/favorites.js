@@ -3,6 +3,8 @@ const favoritesOutput = document.querySelector('.favorites');
 async function removeFavorite(button) {
   const favId = button.parentNode.dataset.id;
 
+  button.parentNode.remove();
+
   await fetch('/api/unfav', {
     method: 'DELETE',
     headers: {
@@ -13,8 +15,6 @@ async function removeFavorite(button) {
     })
   });
 
-  button.parentNode.remove();
-
   if (!favoritesOutput.children.length) {
     favoritesOutput.innerHTML = '<p class="page-header">You have not stored any favorites.</p>';
   }
@@ -23,6 +23,18 @@ async function removeFavorite(button) {
 async function setRating(iTag) {
   const favId = iTag.parentNode.parentNode.dataset.id;
   const ratingLevel = iTag.dataset.level;
+
+  console.log('test')
+  const parentEl = iTag.parentNode;
+  parentEl.innerHTML = '';
+
+  for (let i = 1; i <= 5; i++) {
+    if (i <= ratingLevel) {
+      parentEl.insertAdjacentHTML('beforeend', `<i data-level="${i}" class="fa-solid fa-star"></i>`)
+    } else {
+      parentEl.insertAdjacentHTML('beforeend', `<i data-level="${i}" class="fa-regular fa-star"></i>`)
+    }
+  }
 
   await fetch('/api/rate', {
     method: 'PUT',
@@ -34,17 +46,6 @@ async function setRating(iTag) {
       level: ratingLevel
     })
   })
-
-  const parentEl = iTag.parentNode;
-  parentEl.innerHTML = '';
-
-  for (let i = 1; i <= 5; i++) {
-    if (i <= ratingLevel) {
-      parentEl.insertAdjacentHTML('beforeend', `<i data-level="${i}" class="fa-solid fa-star"></i>`)
-    } else {
-      parentEl.insertAdjacentHTML('beforeend', `<i data-level="${i}" class="fa-regular fa-star"></i>`)
-    }
-  }
 }
 
 if (favoritesOutput) {
