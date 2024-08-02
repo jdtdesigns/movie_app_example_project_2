@@ -24,7 +24,7 @@ async function setRating(iTag) {
   const favId = iTag.parentNode.parentNode.dataset.id;
   const ratingLevel = iTag.dataset.level;
 
-  console.log('test')
+  // Moved the DOM star update code above the fetch to improve UI speed
   const parentEl = iTag.parentNode;
   parentEl.innerHTML = '';
 
