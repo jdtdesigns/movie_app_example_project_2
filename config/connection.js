@@ -1,9 +1,7 @@
 const { Sequelize } = require('sequelize');
 const is_prod = process.env.NODE_ENV === 'production';
 
-console.log(process.env.RENDER_EXTERNAL_URL);
-
-const client = is_prod ? new Sequelize(process.env.RENDER_EXTERNAL_URL, {
+const client = is_prod ? new Sequelize(process.env.DB_URL, {
   dialectOptions: {
     ssl: {
       require: true,
